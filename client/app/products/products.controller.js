@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('meanstoreApp')
-  .controller('ProductsCtrl', function ($scope, Products) {
-    $scope.products = Products;
+  .controller('ProductsCtrl', function ($scope, products) {
+    $scope.products = products;
   });
