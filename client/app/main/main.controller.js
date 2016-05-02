@@ -4,8 +4,8 @@
 
 class MainController {
 
-  constructor($http, $scope, socket, products) {
-    $scope.products = products.query().slice(3);
+  constructor($http, $scope, socket, Products) {
+    $scope.products = Products.query().slice(3);
   }
 }
 

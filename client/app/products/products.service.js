@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanstoreApp')
-  .factory('products', function () {
+  .factory('Products', function () {
     var last_id = 5;
     var example_products = [
       { _id: 1, title: 'Product 1', price: 123.45, quantity: 10, description: 'Lorem ipsum dolor site ament'},
@@ -18,7 +18,7 @@ angular.module('meanstoreApp')
       },
       
       // get specific product
-      get: function(product) {
+      get: function(params) {
         var result = {};
         angular.forEach(example_products, function(product){
           if (product._id == params.id) {
