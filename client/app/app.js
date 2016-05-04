@@ -10,6 +10,7 @@ angular.module('meanstoreApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
+  'ngFileUpload',
   'validation.match'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
