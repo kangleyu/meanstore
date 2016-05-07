@@ -37,6 +37,10 @@ class SignupController {
       });
     }
   }
+  
+  loginOauth(provider) {
+    $window.location.href = '/auth/' + provider;
+  }
 }
 
 angular.module('meanstoreApp')

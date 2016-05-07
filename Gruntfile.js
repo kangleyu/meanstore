@@ -746,6 +746,7 @@ module.exports = function (grunt) {
           'clean:server',
           'env:all',
           'env:test',
+          'db:clean',
           'concurrent:pre',
           'concurrent:test',
           'injector',
@@ -823,4 +824,28 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  
+  grunt.registerTask('db', function(target){
+    if (target === 'clean') {
+      var done = this.async();
+      var config = require('./server/config/environment');
+      var mongoose = require('mongoose');
+      
+      mongoose.connect(config.mongo.uri, config.mongo.options, function(err) {
+        if (err) {
+          done(err);
+        } else {
+          mongoose.connection.db.dropDatabase(function(err) {
+            if (err) {
+              console.log('Connect to ' + config.mongo.uri);
+              done(err);
+            } else {
+              console.log('Dropped ' + config.mongo.uri);
+              done();
+            }
+          });
+        }
+      });
+    }
+  });
 };
