@@ -11,7 +11,9 @@ angular.module('meanstoreApp', [
   'ui.router',
   'ui.bootstrap',
   'ngFileUpload',
-  'validation.match'
+  'validation.match',
+  'ngCart',
+  'braintree-angular'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
